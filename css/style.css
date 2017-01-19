@@ -5,21 +5,12 @@ body {
 .container {
 	background:;
 }
-
-ul{
+/*ul{
 	display: flex;
-	flex-wrap: wrap;/* il va à la ligne qd plus de place*/
-	justify-content: center;/* Les objets flexibles sont groupés au centre */
-	padding: 20px;
-}
-li{
-	align-items: center;
-	justify-content: center;/* Les objets flexibles sont groupés au centre */
-	align-content: center;/*Les rangées sont regroupées au milieu du conteneur flexible*/
-	display: inline-flex;
-	list-style: none;/*enlève les points*/
-	width: 39px;
-	height: 39px;
-	border: 1px solid blue;
-	border-radius: 10px 5px 10px 5px;
+	flex-wrap: wrap; il va à la ligne qd plus de place
+	justify-content: center; Les objets flexibles sont groupés au centre 
+	padding: 20px;*/
+
+h1{
+	text-align: center;
 }
