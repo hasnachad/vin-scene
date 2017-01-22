@@ -4,8 +4,6 @@ var liste2 = [[70,"MOSNIER Bernard",55],[71,"BERGERET Lise",8],[72,"BERGERET Chr
 
 /*Association des deux tableaux*/
 var listeTotale = liste.concat(liste2);
-
-
 /*Affiche la liste par ordre d'arrivée*/
 document.write(listeTotale);
 listeTotale=listeTotale.sort(
@@ -16,21 +14,21 @@ listeTotale=listeTotale.sort(
 
 /*document.getElementById('liste').innerHTML += '<li>'+i+'</li>';*/
 	
-function(tri){
-	var temp = listeTotale[1];
-	For (i=1; i< listeTotale[1]; i++){
-		if listeTotale[1]< temp{
-			temp = listeTotale[1]
+function tri(){
+	var temp = listeTotale[i];
+	For (i=0; i< listeTotale[i]; i++){
+		if listeTotale[i]< temp{
+			temp = listeTotale[i];
 		}
-		return listeTotale[2].charCodAt();
+		return listeTotale[i][0].charCodAt();
 	}
-	var numDossard= listeTotale[2];
-	for (i=2; i< listeTotale[2]; i++){
-		if listeTotale[2]< numDossard{
-			numDossard=listeTotale[2]
+	var numDossard= listeTotale[i];
+	for (i=0; i< listeTotale[i]; i++){
+		if listeTotale[i]< numDossard{
+			numDossard=listeTotale[i]
 		}
 	}
-	return listeTotale[2].sort();
+	return listeTotale[i].sort();
 }
 
 
