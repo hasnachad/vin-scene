@@ -17,3 +17,6 @@ h1{
 #classement{
 	text-align: center;
 }
+form {
+	float: left;
+}

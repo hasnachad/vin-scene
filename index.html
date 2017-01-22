@@ -22,7 +22,7 @@
 				<h1>Liste des participants</h1>
 			</header>
 			<!--création d'un formulaire-->
-			<form class="navbar-form" action="" name="formulaireRecherche" onsubmit="clique(); return false">
+			<form class="navbar-form" action="" name="formulaireRecherche" onsubmit="clique(); return false" onsubmit="alpha();">
 				
 				<!--Affiche le bloc de saisie-->
 				<input type="texte" name="recherche" class="form-control">
@@ -35,6 +35,10 @@
 				<input type="radio" name="choixdutype" value="dossard" class="radio-inline">
 					<label>Dossard</label>
 
+				<input type="radio" name="choixdutype" value="nom" class="radio-inline">
+					<label>Nom</label>
+
+				
 				<!--Création d'un bouton de recherche/habillage-->
 				<button name="rechercheOk" class="btn btn-default" type="submit">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>Recherche</button>
@@ -42,7 +46,7 @@
 					<!--Bouton  de recherche
 					<button onclick="afficherUnTableau()">Classement par ordre d'arrivée</button>
 					<button onclick="alphabétique()">Classement par ordre alphabétique</button>
-					<button onclick="dossard()">CLassement par dossard</button>
+					<button onclick="search()">CLassement par dossard</button>
 					création du tableau-->
 					<table class="table table-bordered">
 						<!--création du tableau avec le javascript-->

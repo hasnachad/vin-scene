@@ -31,16 +31,15 @@ function afficherUnTableau(monTableau){
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////Fonction recherche par dossard///////////////////////////////////////
-}
-//Fonction pour la recherche du dossard
-function dossard(recherche, listeTotale, type=2){ //type correspond 
+
+function search(recherche, listeTotale, type=2){ //type correspond 
 	var resultat = new Array;
 
 	if(type!=0&&type!=2){
 		type='';
 	}
 
-	for(var i=0; i<= listeTotale.length-1; i++){
+	for(var i=0; i<= listeTotale.length -1; i++){
 		if(recherche == listeTotale[i][type]){
 			resultat.push(listeTotale[i]);
 		}
@@ -57,9 +56,21 @@ function clique(){
 	var type = document.formulaireRecherche.choixdutype.value;
 	// alert(recherche,+''+,type);
 	if (type=='dossard'){
-		dossard(recherche, listeTotale, 2);
-	} else	dossard(recherche, listeTotale,0);
+		search(recherche, listeTotale, 2);
+	}else {
+		search(recherche, listeTotale,0);}
+	if (type=='nom'){
+		search(recherche, listeTotale,1);
+	}
 }
 afficherUnTableau(resultat);
 
-//////////Fonction qui permet de recherher un Nom
+/*//////////Fonction qui permet de recherher un Nom ou prénom///////////////////////////////
+function alpha(){
+	var recherche = document.formulaireRecherche.recherche.value;
+	var type = document.formulaireRecherche.choixdutype.value;
+	if (type == 'nom') {
+		nom(recherche, listeTotale, 1);
+	}
+}
+afficherUnTableau(resultat);*/
