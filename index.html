@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<!--Lien du ficher css-->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--Lien jquerry-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" /> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 </head>
 </html>
 <!--Contenu du site-->
@@ -22,7 +25,7 @@
 				<h1>Liste des participants</h1>
 			</header>
 			<!--création d'un formulaire-->
-			<form class="navbar-form" action="" name="formulaireRecherche" onsubmit="clique(); return false" onsubmit="alpha();">
+			<form class="navbar-form" action="" name="formulaireRecherche" onsubmit="clique(); return false">
 				
 				<!--Affiche le bloc de saisie-->
 				<input type="texte" name="recherche" class="form-control">
@@ -35,9 +38,13 @@
 				<input type="radio" name="choixdutype" value="dossard" class="radio-inline">
 					<label>Dossard</label>
 
+				<!--Bouton radio pour sélectionner pour le nom-->
 				<input type="radio" name="choixdutype" value="nom" class="radio-inline">
 					<label>Nom</label>
 
+				<!--Bouton radio pour sélectionner pour le prenom-->
+				<input type="radio" name="choixdutype" value="prenom" class="radio-inline">
+					<label>Prénom</label>
 				
 				<!--Création d'un bouton de recherche/habillage-->
 				<button name="rechercheOk" class="btn btn-default" type="submit">

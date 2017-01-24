@@ -35,14 +35,28 @@ function afficherUnTableau(monTableau){
 function search(recherche, listeTotale, type=2){ //type correspond 
 	var resultat = new Array;
 
-	if(type!=0&&type!=2){
+	if(type!=0&&type!=2&&type!=10&&type!=11){
 		type='';
 	}
-
+	if (type==10){
+		recherche = recherche.toUpperCase()+" ";//Affiche le nom en majuscule
+		type=1;
+	}
+	if (type==11){
+		recherche = " "+recherche.charAt(0).toUpperCase()+recherche.substring(1).toLowerCase();//recherche du prénom
+		type=1;
+	}
+	
 	for(var i=0; i<= listeTotale.length -1; i++){
-		if(recherche == listeTotale[i][type]){
+		if(recherche == parseInt(recherche)){// vérifie si recherche est un entier
+			if (recherche == listeTotale[i][type]){ ///recherche un entier
 			resultat.push(listeTotale[i]);
 		}
+	}else {
+		if(listeTotale[i][type].indexOf(recherche)!=-1){ ///recherche une chaine de caractere
+			resultat.push(listeTotale[i]);
+		}
+	}
 	}
 	if (!resultat[0]){  //vide
 		resultat = [["",'pas trouvé',""]];
@@ -50,27 +64,19 @@ function search(recherche, listeTotale, type=2){ //type correspond
 	afficherUnTableau(resultat);
 }
 
-////////Fonction qui permet de rechercher un numéro de dossard et le num d'arrivée grace au classement//////////////
+//Fonction qui permet de rechercher un numéro de dossard et le num d'arrivée grace au classement ainsi que le nom et prénom///////
 function clique(){
 	var recherche = document.formulaireRecherche.recherche.value;
 	var type = document.formulaireRecherche.choixdutype.value;
 	// alert(recherche,+''+,type);
 	if (type=='dossard'){
 		search(recherche, listeTotale, 2);
+	}else if (type=='nom'){
+		search(recherche, listeTotale, 10);
+	}else if (type=='prenom'){
+		search(recherche, listeTotale, 11);
 	}else {
-		search(recherche, listeTotale,0);}
-	if (type=='nom'){
-		search(recherche, listeTotale,1);
+		search(recherche, listeTotale, 0);
 	}
 }
-afficherUnTableau(resultat);
-
-/*//////////Fonction qui permet de recherher un Nom ou prénom///////////////////////////////
-function alpha(){
-	var recherche = document.formulaireRecherche.recherche.value;
-	var type = document.formulaireRecherche.choixdutype.value;
-	if (type == 'nom') {
-		nom(recherche, listeTotale, 1);
-	}
-}
-afficherUnTableau(resultat);*/
+afficherUnTableau(listeTotale);
